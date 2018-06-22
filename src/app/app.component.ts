@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { StocksComponent } from './stocks.component';
+import { Employee } from './employee';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'Angular';
+  firstName = 'jon';
+  today = new Date();
+  employee : Employee = new Employee('Natdanai', 'Prasartkitjakorn', 50000);
 }
