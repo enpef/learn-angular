@@ -11,6 +11,9 @@ import { FormsModule } from '@angular/forms';
 import { CapitalizePipe } from './capitalize.pipe';
 import { EmployeenamePipe } from './employeename.pipe';
 import { routing } from './app.routing';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { CurrencyService } from './currency.service';
+import { BondsDirective } from './bonds.directive'
 
 @NgModule({
   declarations: [
@@ -20,14 +23,16 @@ import { routing } from './app.routing';
     HighLightDirective,
     DateFormatterPipe,
     CapitalizePipe,
-    EmployeenamePipe
+    EmployeenamePipe,
+    DashboardComponent,
+    BondsDirective
   ],
   imports: [
     BrowserModule,
     FormsModule,
     routing
   ],
-  providers: [StockService],
+  providers: [StockService, CurrencyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
