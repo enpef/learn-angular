@@ -3,7 +3,7 @@ export class Employee {
   lastName : string;
   salary : number;
 
-  constructor( firstName, lastName salary){
+  constructor( firstName, lastName, salary){
     this.firstName = firstName;
     this.lastName = lastName;
     this.salary = salary;
