@@ -10,6 +10,7 @@ import { DateFormatterPipe } from './date-formatter.pipe';
 import { FormsModule } from '@angular/forms';
 import { CapitalizePipe } from './capitalize.pipe';
 import { EmployeenamePipe } from './employeename.pipe';
+import { routing } from './app.routing';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { EmployeenamePipe } from './employeename.pipe';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    routing
   ],
   providers: [StockService],
   bootstrap: [AppComponent]
