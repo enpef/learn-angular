@@ -1,4 +1,11 @@
 <!--The content below is only a placeholder and can be replaced.-->
+<div *ngIf="profile else noProfileFound">
+  Name: {{profile.name}}
+</div>
+
+<ng-template #noProfileFound>
+  No Profile Found with Ng-Template<br>
+</ng-template>
 {{today | date: "dd/MM/yyyy hh:mm a"}}
 
 <div style="text-align:center">
