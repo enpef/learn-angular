@@ -13,7 +13,8 @@ import { EmployeenamePipe } from './employeename.pipe';
 import { routing } from './app.routing';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CurrencyService } from './currency.service';
-import { BondsDirective } from './bonds.directive'
+import { BondsDirective } from './bonds.directive';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { BondsDirective } from './bonds.directive'
   imports: [
     BrowserModule,
     FormsModule,
-    routing
+    routing,
+    NgbModule.forRoot()
   ],
   providers: [StockService, CurrencyService],
   bootstrap: [AppComponent]
