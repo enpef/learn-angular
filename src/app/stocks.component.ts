@@ -10,6 +10,14 @@ import {StockService} from './stock.service';
             {{stock}}
         </li>
     </ul>
+
+    <hr>
+
+    <ul>
+        <li *ngFor="let stockMarket of stockMarkets">
+            {{stockMarket}}
+        </li>
+    </ul>
     `
 })
 
@@ -17,6 +25,7 @@ export class StocksComponent{
     title = ' List of Stocks: ';
     // stocks = ['apple', 'ibm', 'google', 'amazon'];
     stocks;
+    stockMarkets = ['NYSE', 'NASDAQ', 'EURONEXT', 'HKSE', 'LSE']
 
     constructor(stockService : StockService){
         this.stocks = stockService.getStocks();
