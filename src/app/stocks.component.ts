@@ -13,7 +13,7 @@ import {StockService} from './stock.service';
 
     <hr>
 
-    <ul *ngIf="stockMarkets.length >= 5">
+    <ul *ngIf="stockMarkets.length >= 5" [ngClass]="{customClass:isColorBrown , centerClass:isCenter}" >
         <li *ngFor="let stockMarket of stockMarkets">
             {{stockMarket}}
         </li>
@@ -26,7 +26,17 @@ import {StockService} from './stock.service';
         <div *ngSwitchCase="'LSE'">London Stock Exchange</div>
         <div *ngSwitchDefault>Could not find a match</div>
     </div>
-    `
+    `,
+    styles:[
+        `
+            .customClass{
+                color: brown;
+            }
+            .centerClass{
+                text-align: center;
+            }
+        `
+    ]
 })
 
 export class StocksComponent{
@@ -35,6 +45,8 @@ export class StocksComponent{
     market = 'LSE';
     myColor = 'blue';
     mySize = '200%';
+    isCenter = true;
+    isColorBrown = false;
     // stocks = ['apple', 'ibm', 'google', 'amazon'];
     stocks;
     stockMarkets = ['NYSE', 'NASDAQ', 'EURONEXT', 'HKSE', 'LSE']
