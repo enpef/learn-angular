@@ -13,7 +13,7 @@ import {StockService} from './stock.service';
 
     <hr>
 
-    <ul>
+    <ul *ngIf="stockMarkets.length > 5">
         <li *ngFor="let stockMarket of stockMarkets">
             {{stockMarket}}
         </li>
@@ -23,6 +23,7 @@ import {StockService} from './stock.service';
 
 export class StocksComponent{
     title = ' List of Stocks: ';
+    showStockMarket=true;
     // stocks = ['apple', 'ibm', 'google', 'amazon'];
     stocks;
     stockMarkets = ['NYSE', 'NASDAQ', 'EURONEXT', 'HKSE', 'LSE']
