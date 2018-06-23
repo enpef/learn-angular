@@ -13,17 +13,26 @@ import {StockService} from './stock.service';
 
     <hr>
 
-    <ul *ngIf="stockMarkets.length > 5">
+    <ul *ngIf="stockMarkets.length >= 5">
         <li *ngFor="let stockMarket of stockMarkets">
             {{stockMarket}}
         </li>
     </ul>
+
+    <hr>
+
+    <div [ngSwitch]="market">
+        <div *ngSwitchCase="'NYSE'">New York Stock Exchange</div>
+        <div *ngSwitchCase="'LSE'">London Stock Exchange</div>
+        <div *ngSwitchDefault>Could not find a match</div>
+    </div>
     `
 })
 
 export class StocksComponent{
     title = ' List of Stocks: ';
-    showStockMarket=true;
+    showStockMarket = true;
+    market = 'LSE';
     // stocks = ['apple', 'ibm', 'google', 'amazon'];
     stocks;
     stockMarkets = ['NYSE', 'NASDAQ', 'EURONEXT', 'HKSE', 'LSE']
